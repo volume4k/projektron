@@ -13,10 +13,10 @@ RUN apt-get update && apt-get install -y \
 	net-tools
 
 # Copy scripts to root folder
-COPY tools/ ~/
+COPY tools/ /var/
 
 # Set wirkdir to BCS directory
 WORKDIR $BCS
 
 # Call script to download bcs-files to BCS directory
-RUN chmod +x ~/scripts/*; sleep 1; ~/scripts/bcsinstall
+RUN chmod +x /var/scripts/*; sleep 1; /var/scripts/bcsinstall
