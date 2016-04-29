@@ -1,7 +1,0 @@
-#!/bin/bash
-
-echo "hello world"
-echo "variables are:"
-echo "BCS=$BCS"
-echo "JAVA=$JAVA_HOME"
-echo "TOMCAT=$TOMCAT_HOME"

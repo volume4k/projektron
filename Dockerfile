@@ -18,5 +18,5 @@ COPY tools/ /var/
 # Set wirkdir to BCS directory
 WORKDIR $BCS
 
-# Call script to download bcs-files to BCS directory
-RUN chmod +x /var/scripts/*; sleep 1; /var/scripts/bcsinstall
+# Prepare script to download bcs-files to BCS directory
+RUN chmod +x /var/scripts/*
