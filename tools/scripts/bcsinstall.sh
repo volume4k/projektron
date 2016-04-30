@@ -25,14 +25,19 @@ echo "Download URL=$URL"
 credfile=/scripts/credentials
 USERNAME=$(sed '1q;d' credfile)
 PASSWORD=$(sed '2q;d' credfile)
-# Download specified Projektron Version to BCS directory
-wget --user=$USERNAME --password=$PASSWORD  $URL $BCS
+#Check if install file exists
+if [ -e projektron-bcs-$projektron_minor.zip ]
+then
+  echo "Install file exists, using projektron-bcs-$projektron_minor.zip"
+else
+  # Download specified Projektron Version to BCS directory, if not yet existent
+  echo "Downloading installation file"
+  wget --user=$USERNAME --password=$PASSWORD  $URL $BCS
+file
 # Unzip downloaded file and remove zip file
 unzip projektron-bcs-$projektron_minor.zip $BCS
-rm projektron-bcs-$projektron_minor.zip
 
 # Last step start tomcat server
 cd $TOMCAT_HOME/bin
-/bin/bash -c startup.sh
 echo "Tomcat running"
-tail -f ../logs/catalina.out
+tail -f /dev/null && /bin/bash -c startup.sh
