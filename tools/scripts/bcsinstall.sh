@@ -45,4 +45,4 @@ unzip -u projektron-bcs-$projektron_minor.zip -d $BCS
 cd $TOMCAT_HOME/bin
 bash -c startup.sh
 echo "Tomcat running"
-tail -f ../logs/catalina.log
+tail -f /dev/null
