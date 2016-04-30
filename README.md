@@ -2,7 +2,7 @@
 Dockerfile for Projektron BSC
 
 Variables you need to pass on docker run:
-BCS
+BCS = directory in which bcs files will be extracted (e.g. /opt/projektron/bcs)
 JAVA_HOME
 TOMCAT_HOME
 PROJEKTRON_VERSION (e.g. 7.30.12)

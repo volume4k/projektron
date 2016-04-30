@@ -3,6 +3,7 @@
 # Linux
 wget=/usr/bin/wget
 unzip=/usr/bin/unzip
+tail=/usr/bin/tail
 
 # Variables defined in docker run
 echo "variables are:"
@@ -33,3 +34,4 @@ rm projektron-bcs-$projektron_minor.zip
 # Last step start tomcat server
 cd $TOMCAT_HOME/bin
 sh catalina.sh run
+tail -f logs/catalina.out
