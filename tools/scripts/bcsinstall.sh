@@ -35,4 +35,4 @@ rm projektron-bcs-$projektron_minor.zip
 cd $TOMCAT_HOME/bin
 sh catalina.sh run
 echo "Tomcat running"
-tail -f logs/catalina.out & wait
+tail -f /dev/null
