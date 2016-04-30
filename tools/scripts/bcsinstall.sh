@@ -44,5 +44,6 @@ unzip -u projektron-bcs-$projektron_minor.zip -d $BCS
 # Last step start tomcat server
 cd $TOMCAT_HOME/bin
 bash -c startup.sh
-echo "Tomcat running"
-tail -f /dev/null
+echo "Tomcat running, wait to read logs"
+sleep 5
+tail -f ../logs/catalina.out
