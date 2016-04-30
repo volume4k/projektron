@@ -32,4 +32,4 @@ rm projektron-bcs-$projektron_minor.zip
 
 # Last step start tomcat server
 cd $TOMCAT_HOME/bin
-sh startup.sh
+sh catalina.sh run
