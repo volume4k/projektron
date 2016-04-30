@@ -26,13 +26,14 @@ credfile=/scripts/credentials
 USERNAME=$(sed '1q;d' credfile)
 PASSWORD=$(sed '2q;d' credfile)
 #Check if install file exists
+cd /var/scripts
 if [ -e projektron-bcs-$projektron_minor.zip ]
 then
   echo "Install file exists, using projektron-bcs-$projektron_minor.zip"
 else
   # Download specified Projektron Version to BCS directory, if not yet existent
   echo "Downloading installation file"
-  wget --user=$USERNAME --password=$PASSWORD  $URL $BCS
+  wget --user=$USERNAME --password=$PASSWORD  $URL /var/scripts
 file
 # Unzip downloaded file and remove zip file
 unzip projektron-bcs-$projektron_minor.zip $BCS
