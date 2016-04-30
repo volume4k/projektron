@@ -12,6 +12,7 @@ echo "JAVA=$JAVA_HOME"
 echo "TOMCAT=$TOMCAT_HOME"
 echo "BCS_VERSION=$PROJEKTRON_VERSION"
 
+# Using the first 4 chars of the minor version, to get major version (e.g. 7.30.10 -> 7.30)
 projektron_minor=$PROJEKTRON_VERSION
 projektron_major=${projektron_minor:0:4}
 echo "Minor Projektron Version=$projektron_minor"
@@ -23,8 +24,8 @@ URL=https://support.projektron.de/webdav/BCS/Projekte/Downloads/Projektron_BCS_$
 echo "Download URL=$URL"
 # Credentials are stored in /scripts/credentials, first line is username, second line is password
 credfile=/scripts/credentials
-USERNAME=$(sed '1q;d' credfile)
-PASSWORD=$(sed '2q;d' credfile)
+USERNAME=$(sed '1q;d' $credfile)
+PASSWORD=$(sed '2q;d' $credfile)
 #Change to /scripts and check if install file exists
 cd /scripts
 if [ -e projektron-bcs-$projektron_minor.zip ]
