@@ -4,6 +4,7 @@
 wget=/usr/bin/wget
 unzip=/usr/bin/unzip
 tail=/usr/bin/tail
+bash=/bin/bash
 
 # Variables defined in docker run
 echo "variables are:"
@@ -34,12 +35,14 @@ then
 else
   # Download specified Projektron Version to /scripts directory, if not yet existent
   echo "Downloading installation file"
-  wget --user=$USERNAME --password=$PASSWORD  $URL /scripts
+  cd /scripts
+  wget --user=$USERNAME --password=$PASSWORD  $URL
 fi
 # Unzip downloaded file to BCS directory and remove zip file
-unzip projektron-bcs-$projektron_minor.zip $BCS
+unzip -u projektron-bcs-$projektron_minor.zip -d $BCS
 
 # Last step start tomcat server
 cd $TOMCAT_HOME/bin
+bash -c startup.sh
 echo "Tomcat running"
 tail -f ../logs/catalina.log
