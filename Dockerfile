@@ -10,7 +10,8 @@ ENV PROJEKTRON_VERSION projektron-bcs-7.30.10
 # Install netstat
 
 RUN apt-get update && apt-get install -y \
-	net-tools
+	net-tools \
+	postgresql
 
 # Copy scripts to root folder
 COPY tools/ /var/
