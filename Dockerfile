@@ -5,7 +5,7 @@ FROM tomcat:7-jre8
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 ENV TOMCAT_HOME /usr/local/tomcat
 ENV BCS /opt/projektron/bcs
-ENV PROJEKTRON_VERSION projektron-bcs-7.30.10
+ENV PROJEKTRON_VERSION projektron-bcs-7.26.40
 
 # Install netstat
 
