@@ -12,6 +12,7 @@ echo "BCS=$BCS"
 echo "JAVA=$JAVA_HOME"
 echo "TOMCAT=$TOMCAT_HOME"
 echo "BCS_VERSION=$PROJEKTRON_VERSION"
+echo "License=$LICENSE"
 
 # Using the first 4 chars of the minor version, to get major version (e.g. 7.30.10 -> 7.30)
 projektron_minor=$PROJEKTRON_VERSION
@@ -40,6 +41,13 @@ else
 fi
 # Unzip downloaded file to BCS directory and remove zip file
 unzip -o projektron-bcs-$projektron_minor.zip -d $BCS
+
+# Copy PostgreSQL driver to webapp
+cd $BCS/conf
+cp jdbc_psql_42.jar ../webapp/WEB-INF/lib/
+
+# Copy license file to /bin
+# TODO
 
 # Last step start tomcat server
 cd $TOMCAT_HOME/bin
