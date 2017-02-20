@@ -47,7 +47,7 @@ cd $BCS/conf
 cp jdbc_psql_42.jar ../webapp/WEB-INF/lib/
 
 # Copy license file to /bin
-# TODO
+cp /lizenz/$LICENSE $BCS/bin
 
 # Last step start tomcat server
 cd $TOMCAT_HOME/bin
