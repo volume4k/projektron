@@ -39,7 +39,7 @@ else
   wget --user=$USERNAME --password=$PASSWORD  $URL
 fi
 # Unzip downloaded file to BCS directory and remove zip file
-unzip -fo projektron-bcs-$projektron_minor.zip -d $BCS
+unzip -o projektron-bcs-$projektron_minor.zip -d $BCS
 
 # Last step start tomcat server
 cd $TOMCAT_HOME/bin
