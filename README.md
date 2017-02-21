@@ -3,9 +3,9 @@ Dockerfile for Projektron BSC
 Please mind that you need working configs from a previous installation. Configs usually don't need to be changed, as long as the correct port is used on docker start.
 
 ## Variables you need to pass on docker run:
-- BCS = directory in which bcs files will be extracted (e.g. /opt/projektron/bcs)
-- JAVA_HOME
-- TOMCAT_HOME
+- BCS = directory in which bcs files will be extracted (if empty defaults to /opt/projektron/bcs)
+- JAVA_HOME (if empty defaults to /usr/lib/jvm/java-8-openjdk-amd64)
+- TOMCAT_HOME (if empty defaults to /usr/local/tomcat)
 - PROJEKTRON_VERSION (e.g. 7.30.12)
 - LICENSE (filename of your license file, e.g. company_name_license.lic)
 
