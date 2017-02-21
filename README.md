@@ -10,10 +10,11 @@ Please mind that you need working configs from a previous installation. Configs 
 - LICENSE (filename of your license file, e.g. company_name_license.lic)
 
 ## Volumes you need to define:
-- /scripts                  (e.g. -v docker/bcs/scripts:/scripts)
-- /license                  (e.g. -v docker/bcs/license:/license)
-- /usr/local/tomcat/conf    (e.g. -v /docker/bcs/tomcat/conf:/usr/local/tomcat/conf)
-- /opt/projektron/bcs/conf  (e.b. -v /docker/bcs/opt/projektron/bcs/conf:/opt/projektron/bcs/conf)
+- /scripts                        (e.g. -v docker/bcs/scripts:/scripts)
+- /license                        (e.g. -v docker/bcs/license:/license)
+- /usr/local/tomcat/conf          (e.g. -v /docker/bcs/tomcat/conf:/usr/local/tomcat/conf)
+- /opt/projektron/bcs/conf        (e.g. -v /docker/bcs/opt/projektron/bcs/conf:/opt/projektron/bcs/conf)
+- /opt/projektron/bcs/customlibs  (e.g. -v /docker/bcs/customlibs:/opt/projektron/bcs/customlibs)
 
 ### In your scripts volume you need:
 A file called 'credentials', containing your bcs Support credentials (login name in first line, password in second line)
@@ -29,6 +30,9 @@ Configs for tomcat (obviously)
 
 ### In your bcs/conf volume you need:
 Configs for projektron
+
+### In your bcs/customlibs volume you need:
+Your database-libfile (e.g. jdbc_psql_42.jar)
 
 ## Updates:
 Updating projektron by upgrading the container is not tested yet, ALWAYS backup before changing the $PROJEKTRON_VERSION number.
