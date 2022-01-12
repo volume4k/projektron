@@ -1,5 +1,5 @@
 # projektron
-Dockerfile for Projektron BSC
+Dockerfile for Projektron BCS
 - For projektron versions 7.32 and below please use the tag :7.32_or_less
 - For versions 7.34 and up, use the tag :7.34 or latest (= no tag)
 Please mind that you need working configs from a previous installation. Configs usually don't need to be changed, as long as the correct port is used on docker start.
